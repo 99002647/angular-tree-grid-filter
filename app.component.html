@@ -1,0 +1,41 @@
+<div class="col-lg-9 control-section">
+  <div class="content-wrapper">
+     <ejs-treegrid #treegrid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings' childMapping='subtasks' height='350' [treeColumnIndex]='1'>
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' width='120' textAlign='Right'></e-column>
+            <e-column field='taskName' headerText='Task Name' width='220'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='140' format="yMd" textAlign='Right'></e-column>
+            <e-column field='duration' headerText='Duration' width='120' textAlign='Right'></e-column>
+        </e-columns>
+     </ejs-treegrid>
+  </div>
+</div>
+<div class="col-lg-3 property-section">
+     <div class="property-panel-section">
+                <div class="property-panel-header">Properties </div>
+        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+            <tr style="height: 50px">
+                <td >
+                    <div style="width: 100px">Filter Type</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                      <div>
+                        <ejs-dropdownlist #dropdown2 id='typeelement'  width= '100px' [dataSource]='d2data' [fields]='typefields' value='Menu'  (change)="change($event)"></ejs-dropdownlist>
+                      </div>
+                </td>
+            </tr>
+            <tr style="height: 50px">
+                <td >
+                    <div style="width: 100px">Hierarchy Mode</div>
+                </td>
+                <td style="width: 50%;padding-right: 10px">
+                    <div>
+                      <ejs-dropdownlist #dropdown1 id='ddlelement'  width= '100px' [dataSource]='d1data' [fields]='ddlfields' value='Parent'  (change)="onChange($event)"></ejs-dropdownlist>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+    
+    
